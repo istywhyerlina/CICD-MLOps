@@ -1,0 +1,12 @@
+name: mlops_demo
+services:
+  api:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    image: istywhyerlina/mlops_demo_1
+    container_name: mlops_demo_1
+    ports:
+      - 8080:8080
+    env_file:
+      - .env

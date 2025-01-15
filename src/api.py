@@ -9,8 +9,8 @@ dotenv.load_dotenv(".env")
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
 CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
 mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI)
-mlflow.set_experiment("Flower Classification")
-model = mlflow.pyfunc.load_model(f"models:/Untouch Logistic Regression@{CHOSEN_MODEL}")
+mlflow.set_experiment("Churn Experiment")
+model = mlflow.pyfunc.load_model(f"models:/RF best param@{CHOSEN_MODEL}")
 class api_data(BaseModel):
     x1 : float
     x2 : float

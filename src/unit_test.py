@@ -8,10 +8,10 @@ def test_model_availability():
     MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
     CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
     mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI)
-    mlflow.set_experiment("Flower Classification")
+    mlflow.set_experiment("Churn Experiment")
     
     # Act
-    chosen_model = mlflow.pyfunc.load_model(f"models:/Untouch Logistic Regression@{CHOSEN_MODEL}")
+    chosen_model = mlflow.pyfunc.load_model(f"models:/RF best param@{CHOSEN_MODEL}")
     # Assert
     assert type(chosen_model) == mlflow.pyfunc.PyFuncModel
 def test_predict_on_ci():

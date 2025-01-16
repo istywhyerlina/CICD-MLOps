@@ -30,17 +30,19 @@ def home():
 	    return "Hello, FastAPI up!"
 '''@app.get("/predict/")
 def predict(data: api_data):
+    data = pd.DataFrame({'CreditScore': [data.CreditScore], 'Geography': [data.Geography], 'Gender': [data.Gender], 'Age': [data.Age], 'Tenure': [data.Tenure], 'Balance': [data.Balance], 'NumOfProducts': [data.NumOfProducts], 'HasCrCard': [data.HasCrCard], 'IsActiveMember': [data.IsActiveMember], 'EstimatedSalary': [data.EstimatedSalary]}) 
     #data = np.array([[data.x1, data.x2, data.x3, data.x4,data.x5,data.x6,data.x7, data.x8,data.x9,data.x10]]).astype(np.double)
     y_pred = int(model.predict(data)[0])
     return {"res" : y_pred, "error_msg": ""}'''
 @app.post("/predict/")
 def predict(data: api_data):
     #data = np.array([[data["x1"], data['x2'], data['x3'], data['x4'],data['x5'],data['x6'],data['x7'], data['x8'],data['x9'],data['x10']]]).astype(np.float64)
-    #data = pd.DataFrame({'CreditScore': data.CreditScore, 'Geography': data.Geography, 'Gender': data.Gender, 'Age': data.Age, 'Tenure': data.Tenure, 'Balance': data.Balance, 'NumOfProducts': data.NumOfProducts, 'HasCrCard': data.HasCrCard, 'IsActiveMember': data.IsActiveMember, 'EstimatedSalary': data.EstimatedSalary}) 
-    data = np.array([[data.CreditScore, data.Geography, data.Gender, data.Age,data.Tenure,data.Balance,data.NumOfProducts, data.HasCrCard,data.IsActiveMember,data.EstimatedSalary]])
+    data = pd.DataFrame({'CreditScore': [data.CreditScore], 'Geography': [data.Geography], 'Gender': [data.Gender], 'Age': [data.Age], 'Tenure': [data.Tenure], 'Balance': [data.Balance], 'NumOfProducts': [data.NumOfProducts], 'HasCrCard': [data.HasCrCard], 'IsActiveMember': [data.IsActiveMember], 'EstimatedSalary': [data.EstimatedSalary]}) 
+    #data = np.array([[data.CreditScore, data.Geography, data.Gender, data.Age,data.Tenure,data.Balance,data.NumOfProducts, data.HasCrCard,data.IsActiveMember,data.EstimatedSalary]]).astype(np.float64)
     #print(type(data))
-    #print(data)
+    #print(data[0])
     y_pred = int(model.predict(data)[0])
+    print(y_pred)
     return {"res" : y_pred, "error_msg": ""}
 if __name__ == "__main__":
 	    uvicorn.run("api:app", host = "0.0.0.0", port = 8080)

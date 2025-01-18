@@ -15,9 +15,9 @@ def test_model_availability():
     mlflow.set_experiment("Churn Experiment")
     
     # Act
-    #chosen_model = mlflow.pyfunc.load_model(f"models:/RandomForest@stage")
+    chosen_model = mlflow.pyfunc.load_model(f"models:/RandomForest@stage")
     # Assert
-    #assert type(chosen_model) == mlflow.pyfunc.PyFuncModel
+    assert type(chosen_model) == mlflow.pyfunc.PyFuncModel
 def test_predict_on_ci():
     # Arrange
     MODEL_SERVER_IP = os.getenv("MODEL_SERVER_IP")

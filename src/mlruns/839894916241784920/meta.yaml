@@ -1,0 +1,6 @@
+artifact_location: file:///home/istywhyerlina/final_mlops/CICD/src/mlruns/839894916241784920
+creation_time: 1736987464283
+experiment_id: '839894916241784920'
+last_update_time: 1736987464283
+lifecycle_stage: active
+name: Churn Experiment

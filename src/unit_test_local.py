@@ -9,7 +9,7 @@ def test_model_availability():
     # Arrange
     MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
     CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
-    mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI ) 
+    mlflow.set_tracking_uri(uri = "http://localhost:5000") 
     mlflow.set_experiment("Churn Experiment")
     
     # Act

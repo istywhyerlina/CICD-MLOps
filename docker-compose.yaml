@@ -1,4 +1,4 @@
-name: churn_model
+name: churn_model_
 services:
   api:
     build: 

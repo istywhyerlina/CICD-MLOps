@@ -11,8 +11,8 @@ def test_model_availability():
     print(MLFLOW_TRACKING_URI)
     CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
     print(CHOSEN_MODEL)
-    #mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI ) 
-    #mlflow.set_experiment("Churn Experiment")
+    mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI ) 
+    mlflow.set_experiment("Churn Experiment")
     
     # Act
     #chosen_model = mlflow.pyfunc.load_model(f"models:/RandomForest@stage")

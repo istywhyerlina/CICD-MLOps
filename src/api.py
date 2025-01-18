@@ -10,6 +10,7 @@ import json
 dotenv.load_dotenv(".env")
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
 CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
+IP_STAGING=os.getenv("SSH_HOST_STAGE")
 mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI)
 mlflow.set_experiment("Churn Experiment")
 model = mlflow.pyfunc.load_model(f"models:/RandomForest@{CHOSEN_MODEL}")
@@ -35,4 +36,4 @@ def predict(data: api_data):
     print(y_pred)
     return {"res" : y_pred, "error_msg": ""}
 if __name__ == "__main__":
-	    uvicorn.run("api:app", host = "0.0.0.0", port = 8080)
+	    uvicorn.run("api:app", host = IP_STAGING, port = 8080)

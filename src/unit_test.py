@@ -13,7 +13,7 @@ def test_model_availability():
     mlflow.set_experiment("Churn Experiment")
     
     # Act
-    chosen_model = mlflow.pyfunc.load_model(f"models:/RandomForest@{CHOSEN_MODEL}")
+    chosen_model = mlflow.pyfunc.load_model(f"models:/RandomForest@stage")
     # Assert
     assert type(chosen_model) == mlflow.pyfunc.PyFuncModel
 def test_predict_on_ci():

@@ -36,4 +36,4 @@ def predict(data: api_data):
     print(y_pred)
     return {"res" : y_pred, "error_msg": ""}
 if __name__ == "__main__":
-	    uvicorn.run("api:app", host = IP_STAGING, port = 8080)
+	    uvicorn.run("api:app", host = 0.0.0.0, port = 8080)

@@ -1,11 +1,9 @@
-uvicorn
-imbalanced-learn
-fastapi
-mlflow
-os
-dotenv
-requests
-json
+uvicorn==0.34.0
+imblearn==0.0
+imbalanced-learn==0.13.0
+fastapi==0.115.6
+mlflow==2.19.0
+requests==2.32.3
 agate==1.9.1
 annotated-types==0.7.0
 attrs==24.2.0

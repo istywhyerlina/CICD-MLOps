@@ -7,7 +7,7 @@ import pandas as pd
 from fastapi import FastAPI
 from pydantic import BaseModel
 import json
-dotenv.load_dotenv(".env")
+dotenv.load_dotenv("../.env")
 MLFLOW_TRACKING_URI = os.getenv("MLFLOW_TRACKING_URI")
 CHOSEN_MODEL = os.getenv("MODEL_ALIAS")
 mlflow.set_tracking_uri(uri = MLFLOW_TRACKING_URI)

@@ -1,4 +1,4 @@
-name: mlops_demo_
+name: mlops_demo
 services:
   api:
     build: 

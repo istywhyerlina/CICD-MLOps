@@ -1,4 +1,4 @@
-name: churn_model
+name: mlops_demo
 services:
   api:
     build: 

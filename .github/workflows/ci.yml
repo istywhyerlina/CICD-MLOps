@@ -23,7 +23,7 @@ jobs:
         echo "MODEL_SERVER_IP=${{ secrets.MODEL_SERVER_IP_CI }}" >> .env
     - name: Build Container
       run: |
-        docker compose up --build -d
+        docker compose up api --build -d
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
